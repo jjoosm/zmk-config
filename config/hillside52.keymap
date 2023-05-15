@@ -37,7 +37,7 @@
  * | NAV_L |  ESC  | CTRL  |-------|  GUI  |  ALT  | SPACE |  Nav  |---|  Sym  | ENTER |  ALT  |  GUI  |-------| Left  | Down  | SYM_L |
  */
                         bindings = <
-&sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &sk q°    RSHFT
+&sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &sk RSHFT
 &kp  BSPC     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &tog NAV_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &kp  LALT     &kp  SPACE    &mo  NAV_L            &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_LS
