@@ -39,6 +39,39 @@
                 , <&macro_tap &kp SPACE>
                 ;
         };
+
+        my_de_oe: my_de_oe {
+            label = "my_de_oe";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LS(LC(U))>
+                , <&macro_tap &kp U &kp N0 &kp N0 &kp F &kp N6>
+                , <&macro_tap &kp SPACE>
+                ;
+        };
+        
+        my_de_ue: my_de_ue {
+            label = "my_de_ue";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LS(LC(U))>
+                , <&macro_tap &kp U &kp N0 &kp N0 &kp F &kp C>
+                , <&macro_tap &kp SPACE>
+                ;
+        };
+        
+        my_de_eszett: my_de_eszett {
+            label = "my_de_eszett";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LS(LC(U))>
+                , <&macro_tap &kp U &kp N0 &kp N0 &kp D &kp F>
+                , <&macro_tap &kp SPACE>
+                ;
+        };
     };
 };
 
@@ -58,7 +91,7 @@
 &sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &sk RSHFT
 &kp  BSPC     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &mo GER
-&tog NAV_L   &kp  ESC      &kp  LCTRL                   &my_de_ae     &mo GER       &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
+&tog NAV_L   &kp  ESC      &kp  LCTRL                   &kp LGUI      &mo GER       &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -156,16 +189,16 @@
                 };
                 
                 ger {
-/* MODIFIED COLEMAK-DH for umlauts
+/* MODIFIED COLEMAK-DH for umlauts 
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | SHIFT |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT 
+ * | UMLAY |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT 
  * | BKSPC |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | LCTRL |
  * | TAB   |   Z   |   X   |   C   |   D   |   V   |   '   |-------------------|   /   |   K   |   H   |   ,   |   .   |  Up   |-------|
  * | NAV_L |  ESC  | CTRL  |-------|  GUI  |  ALT  | SPACE |  Nav  |---|  Sym  | ENTER |  ALT  |  GUI  |-------| Left  | Down  | SYM_L |
  */
                         bindings = <
-&sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &de_ue        &kp  Y        &kp  SEMI        &sk RSHFT
-&kp  BSPC     &de_ae        &kp  R        &de_eszett    &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &de_oe        &kp  LCTRL
+&sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &my_de_ue        &kp  Y        &kp  SEMI        &sk RSHFT
+&kp  BSPC     &my_de_ae        &kp  R        &my_de_eszett    &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &my_de_oe        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &trans
 &tog NAV_L   &kp  ESC      &kp  LCTRL                   &kp  LGUI     &trans        &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
                         >;
