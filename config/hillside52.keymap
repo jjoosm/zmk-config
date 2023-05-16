@@ -19,6 +19,7 @@
 #define NAV_L    3
 #define SYM_L    4
 #define ADJ_L    5
+#define GER      6
 
 #define Undo   LC(Z)
 #define Cut    LC(X)
@@ -36,14 +37,14 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | SHIFT |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT 
  * | BKSPC |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | LCTRL |
- * | TAB   |   Z   |   X   |   C   |   D   |   V   |   '   |-------------------|   /   |   K   |   H   |   ,   |   .   |  Up   | SHIFT |
- * | NAV_L |  ESC  | CTRL  |-------|  GUI  |  ALT  | SPACE |  Nav  |---|  Sym  | ENTER |  ALT  |  GUI  |-------| Left  | Down  | SYM_L |
+ * | TAB   |   Z   |   X   |   C   |   D   |   V   |   '   |-------------------|   /   |   K   |   H   |   ,   |   .   |  Up   | UMLAU |
+ * | NAV_L |  ESC  | CTRL  |-------|  GUI  | UMLAU | SPACE |  Nav  |---|  Sym  | ENTER |  ALT  |  GUI  |-------| Left  | Down  | SYM_L |
  */
                         bindings = <
 &sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &sk RSHFT
 &kp  BSPC     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  LCTRL
-&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
-&tog NAV_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &kp  LALT     &kp  SPACE    &mo  NAV_L            &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
+&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &mo GER
+&tog NAV_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI      &mo GER       &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -135,6 +136,24 @@
 &none         &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3 &bt  BT_SEL 4                                                                     &none             &none              &none            &none           &none            &none
 &bootloader   &sys_reset    &none         &out OUT_USB  &out OUT_BLE  &none         &bt BT_CLR                                         &none            &none             &none              &none            &none           &none            &trans
 &none         &none         &trans                      &trans        &trans        &trans        &trans                 &trans        &trans           &trans            &trans                              &kp  RCTRL      &none            &none
+                        >;
+			
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+                };
+                
+                ger {
+/* MODIFIED COLEMAK-DH for umlauts
+ * -------------------------------------------------------------------------------------------------------------------------------------
+ * | SHIFT |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT 
+ * | BKSPC |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | LCTRL |
+ * | TAB   |   Z   |   X   |   C   |   D   |   V   |   '   |-------------------|   /   |   K   |   H   |   ,   |   .   |  Up   |-------|
+ * | NAV_L |  ESC  | CTRL  |-------|  GUI  |  ALT  | SPACE |  Nav  |---|  Sym  | ENTER |  ALT  |  GUI  |-------| Left  | Down  | SYM_L |
+ */
+                        bindings = <
+&sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &de_ue        &kp  Y        &kp  SEMI        &sk RSHFT
+&kp  BSPC     &de_ae        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &de_oe        &kp  LCTRL
+&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &trans
+&tog NAV_L   &kp  ESC      &kp  LCTRL                   &kp  LGUI     &trans        &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
