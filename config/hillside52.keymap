@@ -44,7 +44,7 @@
 &sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &sk RSHFT
 &kp  BSPC     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &mo GER
-&tog NAV_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI      &mo GER       &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
+&tog NAV_L   &kp  ESC      &kp  LCTRL                  &de_ae     &mo GER       &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -151,7 +151,7 @@
  */
                         bindings = <
 &sk  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &de_ue        &kp  Y        &kp  SEMI        &sk RSHFT
-&kp  BSPC     &de_ae        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &de_oe        &kp  LCTRL
+&kp  BSPC     &de_ae        &kp  R        &de_eszett    &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &de_oe        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &trans
 &tog NAV_L   &kp  ESC      &kp  LCTRL                   &kp  LGUI     &trans        &kp  SPACE    &mo  NAV_L             &mo  SYM_L    &kp  ENTER    &kp  LALT     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &tog SYM_L
                         >;
