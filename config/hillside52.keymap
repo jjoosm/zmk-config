@@ -110,8 +110,8 @@
  * |       |       |       |-------|       |       |       |  ADJ_L |---|      |       |       |       |-------| CTRL  | MENU  |SkAltGr|
  */
                         bindings = <
-&kp  INS      &kp  LS(4)    &kp  LS(6)   &kp KP_MULTIPLY &kp RA(LS(X)) &kp  RA(+)                                                                     &kp  LS(3)    &kp RA(LS(Z)) &kp  LS(7)    &kp  LS(5)    &kp  GRAVE     &kp  DEL
-&caps_word    &kp  RA(7)    &kp  RA(8)    &kp  LS(0)    &kp  LS(8)    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  LS(9)    &kp  LS(?)    &kp  RA(9)    &kp  RA(0)     &trans
+&kp  INS      &kp  LS(4)    &kp  LS(6)   &kp KP_MULTIPLY &kp RA(LS(X)) &kp  RA(PLUS)                                                                     &kp  LS(3)    &kp RA(LS(Z)) &kp  LS(7)    &kp  LS(5)    &kp  GRAVE     &kp  DEL
+&caps_word    &kp  RA(7)    &kp  RA(8)    &kp  LS(0)    &kp  LS(8)    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  LS(9)    &kp  LS(QMARK)    &kp  RA(9)    &kp  RA(0)     &trans
 &trans        &kp  N1     &kp  N2     &kp  N3     &kp  N4     &kp  N5     &kp  C_PP                                          &kp C_MUTE    &kp N6  &kp  N7       &kp  N8       &kp  N9     &kp N0         &trans
 &none         &none         &trans                      &trans        &trans        &trans        &mo  ADJ_L               &trans      &trans        &trans        &trans                      &kp  RCTRL    &kp  K_APP    &sk  RALT
                         >;
