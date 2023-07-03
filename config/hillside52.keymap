@@ -26,6 +26,19 @@
 
 
 / {
+	macros {
+		zed_em_kay: zed_em_kay {
+		    label = "ZM_zed_em_kay";
+		    compatible = "zmk,behavior-macro";
+		    #binding-cells = <0>;
+		    bindings
+		        = <&macro_press &kp LSHFT>
+		        , <&macro_tap &kp Z &kp M &kp K>
+		        , <&macro_release &kp LSHFT>
+		        ;
+		};
+	       };
+	       
         keymap {
                 compatible = "zmk,keymap";
 
@@ -38,7 +51,7 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&kp  RA(8)    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  RSHFT
+&zed_em_kay    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  RSHFT
 &kp  LSHFT     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  RSHFT
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
@@ -105,7 +118,7 @@
 /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | INS   |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | DELETE|
- * | CAPS  |   {   |   [   | LS(0) |   (   |   +   |-----------------------------------| +     | -     | _     |  )    |   ]   | ENTER |
+ * | CAPS  |   {   |   [   | LS(0) |   (   |   +   |-----------------------------------| -     | -     | _     |  )    |   ]   | ENTER |
  * | Shift |   |   |   {   |   +   |   {   |   }   | Play  |-------------------| Mute  | Vol-  |  N0   |  N1   |  }    |       | SHIFT |
  * |       |       |       |-------|       |       |       |  ADJ_L |---|      |       |       |       |-------| CTRL  | MENU  |SkAltGr|
  */
