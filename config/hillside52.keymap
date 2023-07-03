@@ -32,13 +32,13 @@
                 default_layer {
 /* MODIFIED colemak-DH
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | SHIFT |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT |
+ * | [     |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT |
  * | SHIFT |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | SHIFT |
  * | TAB   |   Z   |   X   |   C   |   D   |   V   | SYM   |-------------------|   /   |   K   |   H   |   ,   |   .   |  Up   | SHIFT |
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&kp  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  RSHFT
+&kp  RA(8)    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  RSHFT
 &kp  LSHFT     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  RSHFT
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
@@ -105,14 +105,14 @@
 /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | INS   |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | DELETE|
- * | CAPS  |   [   |   (   | LS(0) |   (   |   +   |-----------------------------------| +     | -     | _     |  )    |   ]   | ENTER |
+ * | CAPS  |   {   |   [   | LS(0) |   (   |   +   |-----------------------------------| +     | -     | _     |  )    |   ]   | ENTER |
  * | Shift |   |   |   {   |   +   |   {   |   }   | Play  |-------------------| Mute  | Vol-  |  N0   |  N1   |  }    |       | SHIFT |
  * |       |       |       |-------|       |       |       |  ADJ_L |---|      |       |       |       |-------| CTRL  | MENU  |SkAltGr|
  */
                         bindings = <
 &kp  INS      &kp  LS(4)    &kp  LS(6)   &kp KP_MULTIPLY &kp RA(LS(X)) &kp  RA(PLUS)                                                                     &kp  LS(3)    &kp RA(LS(Z)) &kp  LS(7)    &kp  LS(5)    &kp  GRAVE     &kp  DEL
 &caps_word    &kp  RA(7)    &kp  RA(8)    &kp  LS(0)    &kp  LS(8)    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  LS(9)    &kp  LS(QMARK)    &kp  RA(9)    &kp  RA(0)     &trans
-&trans        &kp  N1     &kp  N2     &kp  N3     &kp  N4     &kp  N5     &kp  C_PP                                          &kp C_MUTE    &kp N6  &kp  N7       &kp  N8       &kp  N9     &kp N0         &trans
+&trans        &kp  N1     &kp  N2     &kp  N3     &kp  N4     &kp  N5     &trans                                          &kp C_MUTE    &kp N6  &kp  N7       &kp  N8       &kp  N9     &kp N0         &trans
 &none         &none         &trans                      &trans        &trans        &trans        &mo  ADJ_L               &trans      &trans        &trans        &trans                      &kp  RCTRL    &kp  K_APP    &sk  RALT
                         >;
 			
