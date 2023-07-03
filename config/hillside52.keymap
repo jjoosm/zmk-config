@@ -37,6 +37,18 @@
 		        , <&macro_release &kp LSHFT>
 		        ;
 		};
+		
+		m_LPAR: m_LPAR {
+		    label = "ZM_m_LPAR";
+		    compatible = "zmk,behavior-macro";
+		    #binding-cells = <0>;
+		    bindings
+		        = <&macro_press &kp LSHFT>
+		        , <&macro_tap &kp N8>
+		        , <&macro_release &kp LSHFT>
+		        ;
+		};
+		
 	       };
 	       
         keymap {
@@ -51,7 +63,7 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&zed_em_kay    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  RSHFT
+&m_LPAR    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  LS(N9)
 &kp  LSHFT     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  RSHFT
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
