@@ -64,9 +64,9 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  RA(TAB)
+&kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  LA(TAB)
 &mo  FAKE_SHFT_L     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &mo  FAKE_SHFT_L
-&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  RA(TAB)
+&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  LA(TAB)
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
 			
@@ -174,7 +174,7 @@
  */
                         bindings = <
 &kp  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  RA(Y)        &kp  Y        &kp  SEMI        &kp  RSHFT
-&kp  BSPC     &kp  RA(Q)        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  RA(P)        &kp  LCTRL
+&kp  BSPC     &kp  RA(Q)        &kp  R        &kp  RA(S)        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  RA(P)        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &trans     &kp  SPACE    &mo  NAV_L            &mo  SYM_L    &kp  ENTER    &trans     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
@@ -191,9 +191,9 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&kp TAB    &kp  LS(Q)        &kp  LS(W)        &kp  LS(F)        &kp  LS(P)        &kp  LS(B)                                                                         &kp  LS(J)        &kp  LS(L)        &kp  LS(U)        &kp  LS(Y)        &kp  LS(N1)        &kp  RA(TAB)
+&kp TAB    &kp  LS(Q)        &kp  LS(W)        &kp  LS(F)        &kp  LS(P)        &kp  LS(B)                                                                         &kp  LS(J)        &kp  LS(L)        &kp  LS(U)        &kp  LS(Y)        &kp  LS(N1)        &kp  LA(TAB)
 &trans     &kp  LS(A)        &kp  LS(R)        &kp  LS(S)        &kp  LS(T)        &kp  LS(G)                                                                         &kp  LS(M)        &kp  LS(N)        &kp  LS(E)        &kp  LS(I)        &kp  LS(O)        &trans
-&kp  TAB      &kp  LS(Z)        &kp  LS(X)        &kp  LS(C)        &kp  LS(D)        &kp  LS(V)        &sl  SYM_L                                          &kp  ENTER    &kp  LS(K)        &kp  LS(H)        &kp  SEMI    &kp  COLON      &kp  QMARK       &kp  RA(TAB)
+&kp  TAB      &kp  LS(Z)        &kp  LS(X)        &kp  LS(C)        &kp  LS(D)        &kp  LS(V)        &sl  SYM_L                                          &kp  ENTER    &kp  LS(K)        &kp  LS(H)        &kp  SEMI    &kp  COLON      &kp  QMARK       &kp  LA(TAB)
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
 			
