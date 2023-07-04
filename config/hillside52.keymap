@@ -136,8 +136,8 @@
  * |       |       |       |-------|       |       |       |  ADJ_L |---|      |       |       |       |-------| CTRL  | MENU  |SkAltGr|
  */
                         bindings = <
-&sk  LSHFT      &kp  AT    &kp  AMPS   &kp SQT &kp LT &kp  KP_MULTIPLY                                                                     &kp  KP_SLASH    &kp GT &kp  HASH    &kp  CARET    &kp  PIPE     &kp  RSHFT
-&caps_word    &kp  LBRC    &kp  LBKT    &kp  EQUAL    &kp  LPAR    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  RPAR    &kp  UNDER    &kp  RBKT   &kp  RBRC     &kp DOLLAR
+&kp PERCENT      &kp  AT    &kp  AMPS   &kp RA(SQT) &kp LT &kp  KP_MULTIPLY                                                                     &kp  KP_SLASH    &kp GT &kp  HASH    &kp  CARET    &kp  PIPE     &kp  DOLLAR
+&kp LSHFT    &kp  LBRC    &kp  LBKT    &kp  EQUAL    &kp  LPAR    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  RPAR    &kp  UNDER    &kp  RBKT   &kp  RBRC     &kp RSHFT
 &trans        &kp  N1     &kp  N2     &kp  N3     &kp  N4     &kp  N5     &trans                                          &kp C_MUTE    &kp N6  &kp  N7       &kp  N8       &kp  N9     &kp N0         &trans
 &none         &none         &trans                      &trans        &trans        &trans        &mo  ADJ_L               &trans      &trans        &trans        &trans                      &kp  RCTRL    &kp  K_APP    &sk  RALT
                         >;
