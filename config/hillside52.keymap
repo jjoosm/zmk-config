@@ -17,6 +17,7 @@
 #define SYM_L    4
 #define ADJ_L    5
 #define UMLAUT_L 6
+#define FAKE_SHFT_L 7
 
 #define Undo   LC(Z)
 #define Cut    LC(X)
@@ -57,14 +58,14 @@
                 default_layer {
 /* MODIFIED colemak-DH
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | [     |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT |
+ * | TAB   |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | AltTab|
  * | SHIFT |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | SHIFT |
- * | TAB   |   Z   |   X   |   C   |   D   |   V   | SYM   |-------------------|   /   |   K   |   H   |   ,   |   .   |   ?   | SHIFT |
+ * | TAB   |   Z   |   X   |   C   |   D   |   V   | SYM   |-------------------| ENTER |   K   |   H   |   ,   |   .   |   ?   | AltTab|
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
 &kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  RA(TAB)
-&kp  LSHFT     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  RSHFT
+&mo  FAKE_SHFT_L     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &mo  FAKE_SHFT_L
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  RA(TAB)
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
@@ -112,13 +113,13 @@
 /* NAV
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
- * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   | RIGHT | Right | PG DN |
+ * | SHFT  |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   | RIGHT | SHFT  | SHFT  |
  * | Shift |  F1   |  F2   |  F3   |  F4   |  F5   |  UnDo |-------------------| ReDo  |  F6   |  F7   |  DOWN |  F9   |  F10  | Shift |
  * | F11   |  F12  |       |-------|       |       |       |       |---| ADJ_L |       |       |       |-------| CTRL  | HOME  |  END  |
  */
                         bindings = <
 &kp  Copy     &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp  N7      &kp   N8      &kp   N9      &kp  N0       &trans
-&kp  Cut      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RSHFT    &kp PG_DN
+&kp  LSHFT      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RSHFT    &kp RSHFT
 &trans        &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp Undo                                           &kp  Redo     &kp   F6      &kp  F7      &kp   DOWN      &kp   F9      &kp  F10      &trans
 &kp  F11      &kp  F12      &trans                      &trans        &trans        &trans        &trans                 &mo ADJ_L     &trans        &trans        &trans                     &kp  RCTRL    &kp  HOME     &kp  END
                         >;
@@ -176,6 +177,24 @@
 &kp  BSPC     &kp  RA(Q)        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  RA(P)        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &trans     &kp  SPACE    &mo  NAV_L            &mo  SYM_L    &kp  ENTER    &trans     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
+                        >;
+			
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+                };
+                
+                fake_shift_layer {
+/* MODIFIED colemak-DH
+ * -------------------------------------------------------------------------------------------------------------------------------------
+ * | TAB   |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT |
+ * | SHIFT |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | SHIFT |
+ * | TAB   |   Z   |   X   |   C   |   D   |   V   | SYM   |-------------------| ENTER |   K   |   H   |   ,   |   .   |   ?   | SHIFT |
+ * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
+ */
+                        bindings = <
+&kp TAB    &kp  LS(Q)        &kp  LS(W)        &kp  LS(F)        &kp  LS(P)        &kp  LS(B)                                                                         &kp  LS(J)        &kp  LS(L)        &kp  LS(U)        &kp  LS(Y)        &kp  LS(N1)        &kp  RA(TAB)
+&trans     &kp  LS(A)        &kp  LS(R)        &kp  LS(S)        &kp  LS(T)        &kp  LS(G)                                                                         &kp  LS(M)        &kp  LS(N)        &kp  LS(E)        &kp  LS(I)        &kp  LS(O)        &trans
+&kp  TAB      &kp  LS(Z)        &kp  LS(X)        &kp  LS(C)        &kp  LS(D)        &kp  LS(V)        &sl  SYM_L                                          &kp  ENTER    &kp  LS(K)        &kp  LS(H)        &kp  SEMI    &kp  COLON      &kp  QMARK       &kp  RA(TAB)
+&kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
