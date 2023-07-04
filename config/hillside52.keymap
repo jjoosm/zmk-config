@@ -63,9 +63,9 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&m_LPAR    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI        &kp  LS(N9)
+&kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  RA(TAB)
 &kp  LSHFT     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  RSHFT
-&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  LS(MINUS)       &kp  RSHFT
+&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  RA(TAB)
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
 			
@@ -118,7 +118,7 @@
  */
                         bindings = <
 &kp  Copy     &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp  N7      &kp   N8      &kp   N9      &kp  N0       &trans
-&kp  Cut      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RIGHT    &kp PG_DN
+&kp  Cut      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RSHFT    &kp PG_DN
 &trans        &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp Undo                                           &kp  Redo     &kp   F6      &kp  F7      &kp   DOWN      &kp   F9      &kp  F10      &trans
 &kp  F11      &kp  F12      &trans                      &trans        &trans        &trans        &trans                 &mo ADJ_L     &trans        &trans        &trans                     &kp  RCTRL    &kp  HOME     &kp  END
                         >;
@@ -129,14 +129,14 @@
                 sym_layer {
 /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | INS   |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | DELETE|
- * | CAPS  |   {   |   [   | LS(0) |   (   |   +   |-----------------------------------| -     | -     | _     |  )    |   ]   | ENTER |
- * | Shift |   |   |   {   |   +   |   {   |   }   | Play  |-------------------| Mute  | Vol-  |  N0   |  N1   |  }    |       | SHIFT |
+ * | SHIFT |   @   |   &   |   '   |   <   |   *   |-----------------------------------|   /   |   >   |   #   |  ^    |   |   | DELETE|
+ * | CAPS  |   {   |   [   |   =   |   (   |   +   |-----------------------------------| -     | )     | _     |  ]    |   }   | $     |
+ * | TAB   |   1   |   2   |   3   |   4   |   5   | Play  |-------------------| Mute  | 6     |  7    |  8    |  9    |   0   | SHIFT |
  * |       |       |       |-------|       |       |       |  ADJ_L |---|      |       |       |       |-------| CTRL  | MENU  |SkAltGr|
  */
                         bindings = <
-&kp  INS      &kp  LS(N4)    &kp  LS(N6)   &kp KP_MULTIPLY &kp RA(LS(X)) &kp  RA(PLUS)                                                                     &kp  LS(N3)    &kp RA(LS(Z)) &kp  LS(N7)    &kp  LS(N5)    &kp  GRAVE     &kp  DEL
-&caps_word    &kp  RA(N7)    &kp  RA(N8)    &kp  LS(N0)    &kp  LS(N8)    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  LS(N9)    &kp  LS(QMARK)    &kp  RA(N9)    &kp  RA(N0)     &trans
+&sk  LSHFT      &kp  AT    &kp  AMPS   &kp SQT &kp LT &kp  KP_MULTIPLY                                                                     &kp  KP_SLASH    &kp GT &kp  HASH    &kp  CARET    &kp  PIPE     &kp  RSHFT
+&caps_word    &kp  LBRC    &kp  LBKT    &kp  EQUAL    &kp  LPAR    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  RPAR    &kp  UNDER    &kp  RBKT   &kp  RBRC     &kp DOLLAR
 &trans        &kp  N1     &kp  N2     &kp  N3     &kp  N4     &kp  N5     &trans                                          &kp C_MUTE    &kp N6  &kp  N7       &kp  N8       &kp  N9     &kp N0         &trans
 &none         &none         &trans                      &trans        &trans        &trans        &mo  ADJ_L               &trans      &trans        &trans        &trans                      &kp  RCTRL    &kp  K_APP    &sk  RALT
                         >;
@@ -172,8 +172,8 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |  ALT  |SPACE  |  Nav  |---|  Sym  | ENTER |  ALT  |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&kp  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  LBKT        &kp  Y        &kp  SEMI        &kp  RSHFT
-&kp  BSPC     &kp  SQT        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  SEMI        &kp  LCTRL
+&kp  LSHFT    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  RA(Y)        &kp  Y        &kp  SEMI        &kp  RSHFT
+&kp  BSPC     &kp  RA(Q)        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  RA(P)        &kp  LCTRL
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  SQT                                           &kp  SLASH    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  UP       &kp  RSHFT
 &kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &trans     &kp  SPACE    &mo  NAV_L            &mo  SYM_L    &kp  ENTER    &trans     &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
