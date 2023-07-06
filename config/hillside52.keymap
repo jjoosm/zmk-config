@@ -26,7 +26,30 @@
 #define Redo   LC(Y)
 
 
-/ {
+/ {	
+	behaviors {
+          td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RA(SQT)>, <&kp LS(RA(SQT))>;
+        };
+        
+/*          pht: positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>, <&kp>, <&kp>;
+            hold-trigger-key-positions = <19>, <20>, <8>;    // <---[[M N L]]
+        };
+  */
+    };
+
+
 	macros {
 		zed_em_kay: zed_em_kay {
 		    label = "ZM_zed_em_kay";
@@ -136,7 +159,7 @@
  * |       |       |       |-------|       |       |       |  ADJ_L |---|      |       |       |       |-------| CTRL  | MENU  |SkAltGr|
  */
                         bindings = <
-&kp PERCENT      &kp  AT    &kp  AMPS   &kp RA(SQT) &kp LT &kp  KP_MULTIPLY                                                                     &kp  KP_SLASH    &kp GT &kp  HASH    &kp  CARET    &kp  PIPE     &kp  DOLLAR
+&kp PERCENT      &kp  AT    &kp  AMPS   &td0 &kp LT &kp  KP_MULTIPLY                                                                     &kp  KP_SLASH    &kp GT &kp  HASH    &kp  CARET    &kp  PIPE     &kp  DOLLAR
 &kp LSHFT    &kp  LBRC    &kp  LBKT    &kp  EQUAL    &kp  LPAR    &kp  KP_PLUS                                                                   &kp KP_MINUS  &kp  RPAR    &kp  UNDER    &kp  RBKT   &kp  RBRC     &kp RSHFT
 &trans        &kp  N1     &kp  N2     &kp  N3     &kp  N4     &kp  N5     &trans                                          &kp C_MUTE    &kp N6  &kp  N7       &kp  N8       &kp  N9     &kp N0         &trans
 &none         &none         &trans                      &trans        &trans        &trans        &mo  ADJ_L               &trans      &trans        &trans        &trans                      &kp  RCTRL    &kp  K_APP    &sk  RALT
