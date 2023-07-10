@@ -88,9 +88,9 @@
  */
                         bindings = <
 &kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  LA(TAB)
-&mo  FAKE_SHFT_L     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &mo  FAKE_SHFT_L
+&sl  FAKE_SHFT_L     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &sl  FAKE_SHFT_L
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  LA(TAB)
-&kp  C_MUTE   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
+&sl SYM_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -208,9 +208,9 @@
                 fake_shift_layer {
 /* MODIFIED colemak-DH
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | TAB   |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | SHIFT |
+ * | TAB   |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   !   | SHIFT |
  * | SHIFT |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | SHIFT |
- * | TAB   |   Z   |   X   |   C   |   D   |   V   | SYM   |-------------------| ENTER |   K   |   H   |   ,   |   .   |   ?   | SHIFT |
+ * | TAB   |   Z   |   X   |   C   |   D   |   V   | SYM   |-------------------| ENTER |   K   |   H   |   ;   |   :   |   ?   | SHIFT |
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
