@@ -49,7 +49,21 @@
   */
     };
 
-
+	combos {
+        	compatible = "zmk,combos";
+        	combo_copy {
+            	timeout-ms = <50>;
+            	key-positions = <14 15 16>;
+            	bindings = <&kp LC(C)>;
+        	};
+        	
+        	compatible = "zmk,combos";
+        	combo_paste {
+            	timeout-ms = <50>;
+            	key-positions = <19 20 21>;
+            	bindings = <&kp LC(V)>;
+        	};
+    	};
 	macros {
 		zed_em_kay: zed_em_kay {
 		    label = "ZM_zed_em_kay";
