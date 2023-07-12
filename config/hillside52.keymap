@@ -63,6 +63,13 @@
             	key-positions = <19 20 21>;
             	bindings = <&kp LC(V)>;
         	};
+        	
+        	compatible = "zmk,combos";
+        	combo_undo {
+            	timeout-ms = <50>;
+            	key-positions = <2 3 4>;
+            	bindings = <&kp LC(Z)>;
+        	};
     	};
 	macros {
 		zed_em_kay: zed_em_kay {
@@ -150,13 +157,13 @@
 /* NAV
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
- * | SHFT  |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   | RIGHT | SHFT  | SHFT  |
+ * | SHFT  | Shift |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   | RIGHT | SHFT  | SHFT  |
  * | Shift |  F1   |  F2   |  F3   |  F4   |  F5   |  UnDo |-------------------| ReDo  |  F6   |  F7   |  DOWN |  F9   |  F10  | Shift |
  * | F11   |  F12  |       |-------|       |       |       |       |---| ADJ_L |       |       |       |-------| CTRL  | HOME  |  END  |
  */
                         bindings = <
 &kp  Copy     &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp  N7      &kp   N8      &kp   N9      &kp  N0       &trans
-&kp  LSHFT      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RSHFT    &kp RSHFT
+&kp  LSHFT      &kp  LSHFT    &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RSHFT    &kp RSHFT
 &trans        &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp Undo                                           &kp  Redo     &kp   F6      &kp  F7      &kp   DOWN      &kp   F9      &kp  F10      &trans
 &kp  F11      &kp  F12      &trans                      &trans        &trans        &trans        &trans                 &mo ADJ_L     &trans        &trans        &trans                     &kp  RCTRL    &kp  HOME     &kp  END
                         >;
