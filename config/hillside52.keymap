@@ -211,9 +211,9 @@
  */
                         bindings = <
 &kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  LA(TAB)
-&sl  FAKE_SHFT_L     &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &lrt SYM_L N        &kp  E        &kp  I        &kp  O        &sl  FAKE_SHFT_L
+&sl  FAKE_SHFT_L     &kp  A        &lrt FAKE_SHFT_L R        &kp  S        &lrt SYM_L T        &kp  G                                                                         &kp  M        &lrt SYM_L N        &kp  E        &lrt FAKE_SHFT_L I        &kp  O        &sl  FAKE_SHFT_L
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  TAB
-&sl SYM_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &lt NAV_L BSPC    &lt FAKE_SHFT_L DEL            &kp ENTER    &lt WORD_L  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &sl SYM_L
+&sl SYM_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &lt NAV_L BSPC    &lt FAKE_SHFT_L DEL            &lrt FAKE_SHFT_L ENTER    &lt WORD_L  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &sl SYM_L
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
