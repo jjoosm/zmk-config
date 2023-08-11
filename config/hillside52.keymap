@@ -187,6 +187,15 @@
 		        ;
 		};
 		
+		have: have {
+		    label = "have";
+		    compatible = "zmk,behavior-macro";
+		    #binding-cells = <0>;
+		    bindings
+		        = <&macro_tap &kp H &kp A &kp V &kp E>
+		        ;
+		};
+		
 		m_LPAR: m_LPAR {
 		    label = "ZM_m_LPAR";
 		    compatible = "zmk,behavior-macro";
@@ -212,8 +221,8 @@
  * | Mute  |  ESC  | CTRL  |-------|  GUI  |UMLAUT |BKSPC  |  Nav  |---|  Sym  | SPACE | LCTRL |  GUI  |-------| Left  | Down  | Right |
  */
                         bindings = <
-&kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  LA(TAB)
-&sl  FAKE_SHFT_L     &kp  A        &lrt FAKE_SHFT_L R        &kp  S        &lrt SYM_L T        &kp  G                                                                         &kp  M        &lrt SYM_L N        &kp  E        &lrt FAKE_SHFT_L I        &kp  O        &sl  FAKE_SHFT_L
+&kp TAB    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp TAB
+&sl  FAKE_SHFT_L     &kp  A        &lrt FAKE_SHFT_L R        &lrt FAKE_SHFT_L  S        &lrt SYM_L T        &kp  G                                                                         &kp  M        &lrt SYM_L N        &lrt FAKE_SHFT_L  E        &lrt FAKE_SHFT_L I        &kp  O        &sl  FAKE_SHFT_L
 &kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  TAB
 &sl SYM_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &lt NAV_L BSPC    &lt FAKE_SHFT_L DEL            &lrt FAKE_SHFT_L ENTER    &lt WORD_L  SPACE    &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &sl SYM_L
                         >;
@@ -266,9 +275,9 @@
  * | F11   |  F12  |       |-------|       |       |       |       |---| ADJ_L |       |       |       |-------| CTRL  | HOME  |  END  |
  */
                         bindings = <
-&kp  Copy     &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp  N7      &kp   N8      &kp   N9      &kp  N0       &trans
-&kp  LSHFT      &kp  LSHFT    &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  Paste                                                                     &kp   PG_UP   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  RSHFT    &kp RSHFT
-&trans        &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp Undo                                           &kp  Redo     &kp   F6      &kp  F7      &kp   DOWN      &kp   F9      &kp  F10      &trans
+&kp  Copy     &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp  PG_UP      &kp   N8      &kp   N9      &kp  N0       &trans
+&kp  LSHFT      &kp  LSHFT    &kp  LALT     &kp  LCTRL    &kp  LALT    &kp  Paste                                                                     &kp   TAB   &kp  LEFT    &kp   UP      &kp   RIGHT    &kp  TAB    &kp RSHFT
+&trans        &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp Undo                                           &kp  Redo     &kp   F6      &kp  PG_DN      &kp   DOWN      &kp   F9      &kp  F10      &trans
 &kp  F11      &kp  F12      &trans                      &trans        &trans        &trans        &trans                 &mo ADJ_L     &trans        &trans        &trans                     &kp  RCTRL    &kp  HOME     &kp  END
                         >;
 			
@@ -359,7 +368,7 @@
                         bindings = <
 &kp TAB    &kp  Q        &with        &their        &there       &they                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  LS(N1)        &kp  LA(TAB)
 &sl  FAKE_SHFT_L     &and        &this        &that        &the        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &sl  FAKE_SHFT_L
-&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  TAB
+&kp  TAB      &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &sl  SYM_L                                          &kp  ENTER    &kp  K        &have       &kp  COMMA    &kp  DOT      &kp  QMARK       &kp  TAB
 &sl SYM_L   &kp  ESC      &kp  LCTRL                  &kp  LGUI     &sl  UMLAUT_L     &kp  BSPC    &mo  NAV_L            &mo  SYM_L    &trans     &kp LCTRL    &kp  RGUI                   &kp  LEFT     &kp  DOWN     &kp  RIGHT
                         >;
 			
